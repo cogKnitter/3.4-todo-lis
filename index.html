@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>todo</title>
+    <link href='https://fonts.googleapis.com/css?family=Lato:400,100' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="styles/main.css" charset="utf-8">
+  </head>
+  <body>
+    <section class="wrapper">
+      <header>
+        <h1 class="todo-title">todos</h1>
+      </header>
+      <main class="list-workspace">
+        <section class="list-container">
+          <div class="input-container">
+            <p class="list__arrow"> &#812;</p>
+            <input class="list-entry" data-js="listEntry" placeholder="type todo item here"></input>
+          </div>
+          <ul class="todo-list" data-js="todoList">
+
+          </ul>
+        </section>
+        <section class="list-foot">
+          <div class="left-foot">
+            <h4 class="list-foot__text" data-js="numOfItems">0 items</h4>
+          </div>
+          <div class="center-foot">
+            <h4 class="list-foot__text" data-js="allNav">All</h4>
+            <h4 class="list-foot__text" data-js="activeNav">Active</h4>
+            <h4 class="list-foot__text" data-js="completedNav">Completed</h4>
+          </div>
+          <div class="right-foot">
+            <h4 class="list-foot__text" data-js="">Clear completed</h4>
+          </div>
+        </section>
+      </main>
+      <footer>
+        <span>
+          <p class="footer__message">
+            Double-click to edit a todo
+          </p>
+        </span>
+      </footer>
+    </section> <!-- ends wrapper-->
+  </body>
+  <script type="text/javascript" src="js/jquery-1.12.3.js"></script>
+  <script type="text/javascript" src="js/main.js"></script>
+
+
+</html>
