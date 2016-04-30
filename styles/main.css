@@ -129,19 +129,18 @@ body {
 
 .checkmark {
   display: inline-block;
-  margin-left: -6.9rem;
+  margin-left: -6.8rem;
   font-size: 3.4rem;
   font-weight: 100;
-  transform: translateY(-200%);
+  transform: translateY(-100%);
   color: white; }
 
 .checkmark__click {
   display: inline-block;
-  margin-left: -6.9rem;
+  margin-left: -6.8rem;
   font-size: 3.4rem;
   font-weight: 100;
-  transform: translateY(-200%);
-  color: white;
+  transform: translateY(-100%);
   color: #1abc9c; }
 
 .list-entry {

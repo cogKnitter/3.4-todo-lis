@@ -3,12 +3,14 @@ $(function(){
   var $listEntryEl = $("[data-js='listEntry']");
   var $todoListEl = $("[data-js='todoList']");
   var $todoListItemEl = $("[data-js='listItem']");
+  var $selectedListItemEl = $();
 
-  var $deleteKey = $();
-    $(document).on("keyup", function (e) {
-      var $deleteKey = $(e.keyCode === 8 );
+    var $deleteKey = false;
+    $(document).keydown(function(e){
+      if (e.keyCode === 8) { // ctrl
+        $selectedListItemEl.remove();
+      }
     });
-
 
 
 
@@ -18,11 +20,12 @@ $listEntryEl.on("keyup", function(e){
     if($el.val().length > 1 && e.keyCode === 13){
        $todoListEl.prepend(`
           <li class="todo-list__item" data-js="listItem">
-           <p class="todo-list__item--text" data-js="listItemText">
+            <span class="checkmark" data-js="checkmark"> &#10003;</span>
+            <p class="todo-list__item--text" data-js="listItemText">
           ${$el.val()}
            </p>
           </li>
-          <span class="checkmark" data-js="checkmark"> &#10003;</span>
+
          `);
         $el.val("");
     var $itemInputEl = $("[data-js='itemText']");
@@ -37,14 +40,14 @@ $listEntryEl.on("keyup", function(e){
 
       var $listItemTextEl = $("[data-js='listItemText']")
       $todoListEl.on("click", "p" , function(e){
-        var $el = $(e.target);
-        $el.css("color", "red");
+        $selectedListItemEl = $(e.target);
+        $selectedListItemEl.css("color", "red");
           });
 
       var $completeCheck = $("[data-js='checkmark']");
         $completeCheck.on("click", function(e){
-          $(e.target).toggleClass("checkmark__click");
-          $listItemTextEl.toggleClass("todo-list__item--text-clicked");
+          $(e.target).toggleClass("checkmark__click")
+          $(e.target).next($("[data-js='listItemText']")).toggleClass("todo-list__item--text-clicked");
 
         });
 
