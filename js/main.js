@@ -2,51 +2,58 @@ $(function(){
 
   var $listEntryEl = $("[data-js='listEntry']");
   var $todoListEl = $("[data-js='todoList']");
-  var $itemInputEl = $("[data-js='itemText']");
+  var $todoListItemEl = $("[data-js='listItem']");
 
-  // $listEntryEl.on("click", function (e) {
-  //   console.log(look at how well I work);
-  // });
+  var $deleteKey = $();
+    $(document).on("keyup", function (e) {
+      var $deleteKey = $(e.keyCode === 8 );
+    });
+
+
 
 
 $listEntryEl.on("keyup", function(e){
      // Append a new li to the list container element
   var $el = $(e.target);
-   console.log(e.keyCode)
-    if(e.keyCode === 13){
+    if($el.val().length > 1 && e.keyCode === 13){
        $todoListEl.prepend(`
-         <span class="checkmark"> &#10003; <span>
-         <span class="circle-check"> &#x25CB; <span>
-         <li>
-          <span class="itemContainer" data-js="changeItem">
-         ${$el.val()}
-          </span>
-         </li>
+          <li class="todo-list__item" data-js="listItem">
+           <p class="todo-list__item--text" data-js="listItemText">
+          ${$el.val()}
+           </p>
+          </li>
+          <span class="checkmark" data-js="checkmark"> &#10003;</span>
          `);
         $el.val("");
+    var $itemInputEl = $("[data-js='itemText']");
+    var $itemCount = $($itemInputEl).length;
+    var $numOfItems = $("[data-js='numOfItems']")
+      if($itemCount === 1){
+        $numOfItems.text($itemCount + " item left")
+      }
+      else {
+        $numOfItems.text($itemCount + " items left")
+      }
 
-    var $changeItem = $("[data-js='changeItem']")
+      var $listItemTextEl = $("[data-js='listItemText']")
+      $todoListEl.on("click", "p" , function(e){
+        var $el = $(e.target);
+        $el.css("color", "red");
+          });
 
-      $changeItem.on("click", function(e){
-        if(e.keyCode === 8){
-            var $el = $(e.target);
-            $el.parent().remove();
-        };
-      });
-    };
-  });
+      var $completeCheck = $("[data-js='checkmark']");
+        $completeCheck.on("click", function(e){
+          $(e.target).toggleClass("checkmark__click");
+          $listItemTextEl.toggleClass("todo-list__item--text-clicked");
 
-  // console.log(This works)
-  // var $el = $(e.target);
-  //
-  // if(e.keycode === 13)
-  //
-  // $todoListEl.prepend(`
-  //   <li>
-  //   ${el.val()}
-  //   </li>
-  //   `);
-  //   console.log($todoListEl);
+        });
+
+    }; // end of if statement for 2 chars and return key
+  }); // end of listEntryEl which creates listItemContainer
+
+
+
+
 
 
 

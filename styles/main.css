@@ -66,7 +66,7 @@ html {
 
 body {
   font-size: 1.4rem;
-  font-family: helvetica;
+  font-family: "Lato", sans-serif;
   font-weight: 100; }
 
 .wrapper {
@@ -87,13 +87,62 @@ body {
   width: 80%;
   background-color: white; }
 
+.list-container {
+  display: inline-block;
+  width: 100%; }
+
+.input-container {
+  padding-bottom: 2rem;
+  border-bottom: 1px solid rgba(128, 128, 128, 0.4); }
+
 .list__arrow {
   display: inline-block;
   color: rgba(153, 153, 153, 0.4);
-  font-size: 1.5rem;
+  font-size: 4rem;
   margin-left: 2rem;
   margin-top: 0;
-  transform: translateY(230%); }
+  transform: translateY(1030%);
+  line-height: 10%; }
+
+.todo-list {
+  display: inline-block;
+  list-style: circle;
+  font-size: 10rem;
+  line-height: 20%;
+  margin: 2rem 1rem 0 4rem;
+  color: #999999; }
+
+.todo-list__item--text {
+  display: inline-block;
+  vertical-align: top;
+  font-size: 3rem;
+  color: black;
+  margin: 0; }
+
+.todo-list__item--text-clicked {
+  display: inline-block;
+  vertical-align: top;
+  font-size: 3rem;
+  color: #999999;
+  text-decoration: line-through;
+  margin: 0; }
+
+.checkmark {
+  display: inline-block;
+  margin-left: -6.9rem;
+  font-size: 3.4rem;
+  font-weight: 100;
+  transform: translateY(-200%);
+  color: white; }
+
+.checkmark__click {
+  display: inline-block;
+  margin-left: -6.9rem;
+  font-size: 3.4rem;
+  font-weight: 100;
+  transform: translateY(-200%);
+  color: white;
+  color: #1abc9c; }
 
 .list-entry {
   width: 90%;
