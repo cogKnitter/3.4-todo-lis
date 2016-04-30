@@ -7,12 +7,10 @@ $(function(){
 
     var $deleteKey = false;
     $(document).keydown(function(e){
-      if (e.keyCode === 8) { // ctrl
+      if (e.keyCode === 8) {
         $selectedListItemEl.remove();
       }
     });
-
-
 
 $listEntryEl.on("keyup", function(e){
      // Append a new li to the list container element
@@ -48,9 +46,7 @@ $listEntryEl.on("keyup", function(e){
         $completeCheck.on("click", function(e){
           $(e.target).toggleClass("checkmark__click")
           $(e.target).next($("[data-js='listItemText']")).toggleClass("todo-list__item--text-clicked");
-
         });
-
     }; // end of if statement for 2 chars and return key
   }); // end of listEntryEl which creates listItemContainer
 
