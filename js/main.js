@@ -8,7 +8,7 @@ $(function(){
     var $deleteKey = false;
     $(document).keydown(function(e){
       if (e.keyCode === 8) {
-        $selectedListItemEl.remove();
+        $selectedListItemEl.parent().remove();
       }
     });
 
@@ -39,7 +39,6 @@ $listEntryEl.on("keyup", function(e){
       var $listItemTextEl = $("[data-js='listItemText']")
       $todoListEl.on("click", "p" , function(e){
         $selectedListItemEl = $(e.target);
-        $selectedListItemEl.css("color", "red");
           });
 
       var $completeCheck = $("[data-js='checkmark']");
