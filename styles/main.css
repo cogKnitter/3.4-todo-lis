@@ -166,6 +166,10 @@ body {
   margin: 0;
   color: #999999; }
 
+.list-foot__clickable:hover {
+  border: 1px solid rgba(230, 179, 179, 0.5);
+  border-radius: 3px; }
+
 .left-foot {
   display: inline-block;
   width: 25%; }

@@ -4,6 +4,10 @@ $(function(){
   var $todoListEl = $("[data-js='todoList']");
   var $todoListItemEl = $("[data-js='listItem']");
   var $selectedListItemEl = $();
+  var $allNav = $("[data-js='allNav']");
+  var $activeNav = $("[data-js='activeNav']");
+  var $completedNav = $("[data-js='completedNav']");
+  var $footHover = $("[data-js='foot-hover']")
 
     var $deleteKey = false;
     $(document).keydown(function(e){
@@ -46,8 +50,30 @@ $listEntryEl.on("keyup", function(e){
           $(e.target).toggleClass("checkmark__click")
           $(e.target).next($("[data-js='listItemText']")).toggleClass("todo-list__item--text-clicked");
         });
+
+
     }; // end of if statement for 2 chars and return key
   }); // end of listEntryEl which creates listItemContainer
+
+  $footHover.on("hover", "h4", function (e){
+    (e.target).addClass("hover-border")
+
+  })
+
+  $activeNav.on("click", function(e){
+    $(".todo-list__item--text").parent().show();
+    $(".todo-list__item--text-clicked").parent().hide();
+  });
+
+  $completedNav.on("click", function(e){
+    $(".todo-list__item--text-").parent().hide();
+    $(".todo-list__item--text-clicked").parent().show();
+  });
+
+  $allNav.on("click", function(e){
+    $(".todo-list__item--text-clicked").parent().show();
+    $(".todo-list__item--text-").parent().show();
+  });
 
 
 
