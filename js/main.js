@@ -7,7 +7,6 @@ $(function(){
   var $allNav = $("[data-js='allNav']");
   var $activeNav = $("[data-js='activeNav']");
   var $completedNav = $("[data-js='completedNav']");
-  var $footHover = $("[data-js='foot-hover']")
 
     var $deleteKey = false;
     $(document).keydown(function(e){
@@ -47,7 +46,7 @@ $listEntryEl.on("keyup", function(e){
 
       var $completeCheck = $("[data-js='checkmark']");
         $completeCheck.on("click", function(e){
-          $(e.target).toggleClass("checkmark__click")
+          $(e.target).toggleClass("checkmark__click");
           $(e.target).next($("[data-js='listItemText']")).toggleClass("todo-list__item--text-clicked");
         });
 
@@ -55,10 +54,6 @@ $listEntryEl.on("keyup", function(e){
     }; // end of if statement for 2 chars and return key
   }); // end of listEntryEl which creates listItemContainer
 
-  $footHover.on("hover", "h4", function (e){
-    (e.target).addClass("hover-border")
-
-  })
 
   $activeNav.on("click", function(e){
     $(".todo-list__item--text").parent().show();
@@ -74,15 +69,6 @@ $listEntryEl.on("keyup", function(e){
     $(".todo-list__item--text-clicked").parent().show();
     $(".todo-list__item--text-").parent().show();
   });
-
-
-
-
-
-
-
-
-
 
 
 });
