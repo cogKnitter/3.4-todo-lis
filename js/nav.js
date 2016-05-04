@@ -1,6 +1,5 @@
 var $ = require("jquery");
 
-  console.log("nav is working")
 
 var $allNav = $("[data-js='allNav']");
     $activeNav = $("[data-js='activeNav']");
