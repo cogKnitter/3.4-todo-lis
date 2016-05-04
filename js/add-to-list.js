@@ -1,20 +1,21 @@
 var $ = require("jquery");
 
+ // $listEntryEl = $("[data-js='listEntry']");
 var $todoListEl = $("[data-js='todoList']");
     $todoListItemEl = $("[data-js='listItem']");
     $selectedListItemEl = $();
-    // $listEntryEl = $("[data-js='listEntry']");
-    // $listEntryEl.on("keyup", function(e){
 
-      this.prependList =  function (addText){(`
+// $listEntryEl.on("keyup", function(e){
+this.prependList = function(todoText){
+     // Append a new li to the list container element
+       $todoListEl.prepend(`
           <li class="todo-list__item" data-js="listItem">
             <span class="checkmark" data-js="checkmark"> &#10003;</span>
             <p class="todo-list__item--text" data-js="listItemText">
-          ${addText}
+          ${todoText}
            </p>
           </li>
          `);
-        $el.val("");
     var $itemInputEl = $("[data-js='itemText']");
     var $itemCount = $($itemInputEl).length;
     var $numOfItems = $("[data-js='numOfItems']")
@@ -31,7 +32,7 @@ var $todoListEl = $("[data-js='todoList']");
         $(e.target).next($("[data-js='listItemText']")).toggleClass("todo-list__item--text-clicked");
       });
 
-    }; // end of if statement for 2 chars and return key
+   // end of if statement for 2 chars and return key
   }; // end of listEntryEl which creates listItemContainer
 
 

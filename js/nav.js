@@ -6,17 +6,17 @@ var $allNav = $("[data-js='allNav']");
     $completedNav = $("[data-js='completedNav']");
 
 
-    $activeNav.on("click", function(e){
+    $activeNav.on("click", function(){
       $(".todo-list__item--text").parent().show();
       $(".todo-list__item--text-clicked").parent().hide();
     });
 
-    $completedNav.on("click", function(e){
+    $completedNav.on("click", function(){
       $(".todo-list__item--text-").parent().hide();
       $(".todo-list__item--text-clicked").parent().show();
     });
 
-    $allNav.on("click", function(e){
+    $allNav.on("click", function(){
       $(".todo-list__item--text-clicked").parent().show();
       $(".todo-list__item--text-").parent().show();
     });
