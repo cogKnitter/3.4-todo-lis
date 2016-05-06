@@ -27,7 +27,7 @@ $listEntryEl.on("keyup", function(e){
          `);
         $el.val("");
     var $itemInputEl = $("[data-js='itemText']");
-    var $itemCount = $($itemInputEl).length;
+    var $itemCount = $todoListEl.children().length;
     var $numOfItems = $("[data-js='numOfItems']")
       if($itemCount === 1){
         $numOfItems.text($itemCount + " item left")
@@ -36,20 +36,18 @@ $listEntryEl.on("keyup", function(e){
         $numOfItems.text($itemCount + " items left")
       }
 
-      var $listItemTextEl = $("[data-js='listItemText']")
-      $todoListEl.on("click", "p" , function(e){
-        $selectedListItemEl = $(e.target);
-          });
-
-      var $completeCheck = $("[data-js='checkmark']");
-        $completeCheck.on("click", function(e){
-          $(e.target).toggleClass("checkmark__click")
-          $(e.target).next($("[data-js='listItemText']")).toggleClass("todo-list__item--text-clicked");
-        });
     }; // end of if statement for 2 chars and return key
   }); // end of listEntryEl which creates listItemContainer
 
+  $todoListEl.on("click", "[data-js='listItemText']" , function(e){
+    $selectedListItemEl = $(e.target);
+      });
 
+// show checkmark and cross out item
+    $todoListEl.on("click", "[data-js='checkmark']", function(e){
+      $(e.target).toggleClass("checkmark__click");
+      $(e.target).next($("[data-js='listItemText']")).toggleClass("todo-list__item--text-clicked");
+    });
 
 
 
