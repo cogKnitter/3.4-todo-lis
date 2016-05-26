@@ -74,14 +74,16 @@ var $allNav = $("[data-js='allNav']");
     $completedNav = $("[data-js='completedNav']");
 
 
-    $activeNav.on("click", function(){
-      $(".todo-list__item--text").parent().show();
-      $(".todo-list__item--text-clicked").parent().hide();
+    $completedNav.on("click", function(){
+      console.log("should hide");
+      $(".todo-list__item--text-clicked").parent().show();
+      $(".todo-list__item--text-").parent().hide();
     });
 
-    $completedNav.on("click", function(){
-      $(".todo-list__item--text-").parent().hide();
-      $(".todo-list__item--text-clicked").parent().show();
+    $activeNav.on("click", function(){
+      console.log("should show");
+      $(".todo-list__item--text").parent().show();
+      $(".todo-list__item--text-clicked").parent().hide();
     });
 
     $allNav.on("click", function(){
