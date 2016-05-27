@@ -4,6 +4,7 @@ var $ = require("jquery");
 var $allNav = $("[data-js='allNav']");
     $activeNav = $("[data-js='activeNav']");
     $completedNav = $("[data-js='completedNav']");
+    $removeCompletedNav = $("[data-js='removeCompletedNav']")
 
 
     $completedNav.on("click", function(){
@@ -21,3 +22,7 @@ var $allNav = $("[data-js='allNav']");
     $allNav.on("click", function(){
       $(".todo-list__item").show();
     });
+
+    $removeCompletedNav.on("click", function(){
+      $(".todo-list__item--text-clicked").parent().remove();
+    })
