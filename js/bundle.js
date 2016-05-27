@@ -76,8 +76,8 @@ var $allNav = $("[data-js='allNav']");
 
     $completedNav.on("click", function(){
       console.log("should hide");
+      $(".todo-list__item--text").parent().hide();
       $(".todo-list__item--text-clicked").parent().show();
-      $(".todo-list__item--text-").parent().hide();
     });
 
     $activeNav.on("click", function(){
@@ -87,8 +87,7 @@ var $allNav = $("[data-js='allNav']");
     });
 
     $allNav.on("click", function(){
-      $(".todo-list__item--text-clicked").parent().show();
-      $(".todo-list__item--text-").parent().show();
+      $(".todo-list__item").show();
     });
 
 },{"jquery":4}],4:[function(require,module,exports){
