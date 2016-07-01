@@ -72,7 +72,8 @@ body {
 .wrapper {
   height: 637px;
   width: 923px;
-  background-color: #f2f2f2; }
+  background-color: #f2f2f2;
+  margin: 0 auto; }
 
 .todo-title {
   font-size: 15rem;
